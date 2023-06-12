@@ -3,15 +3,15 @@
 #include <string>
 
 class Base {
-public:
+ public:
   virtual void foo() = 0;
 };
 class Child1 : public Base {
-public:
+ public:
   void foo() override { std::cout << "Child 1" << std::endl; }
 };
 class Child2 : public Base {
-public:
+ public:
   void foo() override { std::cout << "Child 2" << std::endl; }
 };
 
@@ -23,12 +23,12 @@ int main() {
   std::cin >> selector;
 
   switch (selector) {
-  case 1:
-    test = std::make_unique<Child1>();
-    break;
-  case 2:
-    test = std::make_unique<Child2>();
-    break;
+    case 1:
+      test = std::make_unique<Child1>();
+      break;
+    case 2:
+      test = std::make_unique<Child2>();
+      break;
   }
 
   test->foo();
